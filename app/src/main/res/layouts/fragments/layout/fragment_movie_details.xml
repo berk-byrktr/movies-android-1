@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewStatePage"
+            type="com.movies.android.ui.viewstates.ViewStatePage" />
+
+        <variable
+            name="movie"
+            type="com.movies.android.ui.models.Movie" />
+
+    </data>
+
+    <LinearLayout
+        style="@style/ViewMM"
+        android:background="@color/backgroundDetail"
+        android:orientation="vertical">
+
+        <FrameLayout
+            style="@style/ViewMW"
+            android:layout_height="@dimen/dim_toolbar">
+
+            <com.movies.android.ui.customs.CustomImage
+                android:id="@+id/ivBack"
+                style="@style/ViewWW"
+                android:layout_height="@dimen/dim_toolbar_logo"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginStart="@dimen/mrg_24"
+                app:srcCompat="@drawable/ic_back" />
+
+        </FrameLayout>
+
+        <com.movies.android.ui.customs.CustomPage
+            android:id="@+id/cp"
+            style="@style/ViewMM"
+            error="@{viewStatePage.error}"
+            state="@{viewStatePage.getState()}"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ScrollView style="@style/ViewMW">
+
+                <RelativeLayout style="@style/ViewMM">
+
+                    <com.movies.android.ui.customs.CustomImage
+                        android:id="@+id/iv"
+                        style="@style/ImageLarge"
+                        imageUrl="@{movie.imageUrl}"
+                        android:layout_centerHorizontal="true"
+                        app:withBorder="true" />
+
+                    <com.movies.android.ui.customs.CustomText
+                        android:id="@+id/tvTitle"
+                        style="@style/TextBoldLargeDefault"
+                        android:layout_below="@id/iv"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/mrg_4"
+                        android:text="@{movie.title}" />
+
+                    <com.movies.android.ui.customs.CustomText
+                        android:id="@+id/tvDateDuration"
+                        style="@style/TextSmallDefault"
+                        android:layout_below="@id/tvTitle"
+                        android:layout_centerHorizontal="true"
+                        android:text="@{movie.releaseDate}" />
+
+                    <com.movies.android.ui.customs.CustomText
+                        android:id="@+id/tvTitleOverview"
+                        style="@style/TextBoldLargeDefault"
+                        android:layout_below="@id/tvDateDuration"
+                        android:layout_marginStart="@dimen/mrg_24"
+                        android:layout_marginTop="@dimen/mrg_24"
+                        android:layout_marginEnd="@dimen/mrg_24"
+                        android:text="@string/cs_overview" />
+
+                    <com.movies.android.ui.customs.CustomText
+                        android:id="@+id/tvOverview"
+                        style="@style/TextSmallDefault"
+                        android:layout_below="@id/tvTitleOverview"
+                        android:layout_marginStart="@dimen/mrg_24"
+                        android:layout_marginTop="@dimen/mrg_24"
+                        android:layout_marginEnd="@dimen/mrg_24"
+                        android:text="@{movie.overview}" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv"
+                        style="@style/ViewMW"
+                        android:layout_below="@id/tvOverview"
+                        android:layout_marginTop="@dimen/mrg_24"
+                        android:clipToPadding="false"
+                        android:paddingStart="@dimen/pdd_24" />
+
+                </RelativeLayout>
+
+            </ScrollView>
+
+        </com.movies.android.ui.customs.CustomPage>
+
+    </LinearLayout>
+
+</layout>

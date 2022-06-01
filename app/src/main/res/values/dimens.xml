@@ -1,0 +1,43 @@
+<resources>
+
+    <!-- Fonts-->
+    <dimen name="fnt_super_small">4sp</dimen>
+    <dimen name="fnt_xxsmall">8sp</dimen>
+    <dimen name="fnt_xsmall">10sp</dimen>
+    <dimen name="fnt_small">12sp</dimen>
+    <dimen name="fnt_medium">14sp</dimen>
+    <dimen name="fnt_large">16sp</dimen>
+    <dimen name="fnt_xlarge">18sp</dimen>
+    <dimen name="fnt_20">20sp</dimen>
+    <dimen name="fnt_toolbar">20sp</dimen>
+    <dimen name="fnt_xxlarge">24sp</dimen>
+
+    <!-- Sizes-->
+    <dimen name="dim_toolbar">65dp</dimen>
+    <dimen name="dim_toolbar_logo">20dp</dimen>
+    <dimen name="dim_width_movie_card">106dp</dimen>
+    <dimen name="dim_height_movie_card">160dp</dimen>
+    <dimen name="dim_button">48dp</dimen>
+    <dimen name="dim_rating_view">40dp</dimen>
+    <dimen name="dim_rating_stroke_height">4dp</dimen>
+
+    <!-- Margins-->
+    <dimen name="mrg_main">16dp</dimen>
+    <dimen name="mrg_4">4dp</dimen>
+    <dimen name="mrg_8">8dp</dimen>
+    <dimen name="mrg_12">12dp</dimen>
+    <dimen name="mrg_18">18dp</dimen>
+    <dimen name="mrg_24">24dp</dimen>
+    <dimen name="mrg_48">24dp</dimen>
+
+    <!-- Paddings-->
+    <dimen name="pdd_main">16dp</dimen>
+    <dimen name="pdd_4">4dp</dimen>
+    <dimen name="pdd_21">21dp</dimen>
+    <dimen name="pdd_24">24dp</dimen>
+    <dimen name="pdd_48">48dp</dimen>
+
+    <!--Corners-->
+    <dimen name="round_standart">4dp</dimen>
+
+</resources>

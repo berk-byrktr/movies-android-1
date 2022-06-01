@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="TextBoldMediumDefault" parent="Text">
+        <item name="android:textSize">@dimen/fnt_medium</item>
+        <item name="android:textColor">@color/textDef</item>
+        <item name="fontType">bold</item>
+    </style>
+
+    <style name="TextBoldLargeDefault" parent="Text">
+        <item name="android:textSize">@dimen/fnt_large</item>
+        <item name="android:textColor">@color/textDef</item>
+        <item name="fontType">bold</item>
+    </style>
+
+    <style name="TextSmallDefault" parent="Text">
+        <item name="android:textSize">@dimen/fnt_small</item>
+        <item name="android:textColor">@color/textDef</item>
+    </style>
+
+    <style name="TextSmallBlack" parent="Text">
+        <item name="android:textSize">@dimen/fnt_small</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextSmallYellow" parent="Text">
+        <item name="android:textSize">@dimen/fnt_small</item>
+        <item name="android:textColor">@color/textYellow</item>
+        <item name="android:paddingStart">@dimen/pdd_21</item>
+        <item name="android:paddingEnd">@dimen/pdd_21</item>
+        <item name="android:paddingTop">@dimen/pdd_4</item>
+        <item name="android:paddingBottom">@dimen/pdd_4</item>
+        <item name="android:gravity">center_vertical|start</item>
+    </style>
+
+</resources>

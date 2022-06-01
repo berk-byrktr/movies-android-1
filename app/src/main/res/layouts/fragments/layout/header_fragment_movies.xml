@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ViewMW"
+    android:orientation="vertical">
+
+    <com.movies.android.ui.customs.CustomText
+        style="@style/TextSmallYellow"
+        android:text="@string/title_movies_current" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCurrentMovies"
+        style="@style/ViewMW" />
+
+    <com.movies.android.ui.customs.CustomText
+        style="@style/TextSmallYellow"
+        android:text="@string/title_movies_popular" />
+
+</LinearLayout>

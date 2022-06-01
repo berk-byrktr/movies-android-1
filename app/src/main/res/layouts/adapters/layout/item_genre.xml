@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="genre"
+            type="com.movies.android.ui.models.Genre" />
+
+    </data>
+
+    <com.movies.android.ui.customs.CustomText
+        style="@style/TextSmallBlack"
+        android:layout_marginEnd="@dimen/mrg_8"
+        android:background="@drawable/tv_genre"
+        android:padding="@dimen/pdd_4"
+        android:text="@{genre.name}" />
+
+</layout>

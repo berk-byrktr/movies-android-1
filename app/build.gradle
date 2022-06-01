@@ -1,0 +1,97 @@
+apply plugin: Plugins.androidApplication
+apply plugin: Plugins.kotlinAndroid
+apply plugin: Plugins.kotlinKapt
+apply plugin: Plugins.kotlinAndroidExtensions
+
+android {
+    compileSdkVersion Configs.compileSdkVersion
+    defaultConfig {
+        applicationId Configs.applicationId
+        minSdkVersion Configs.minSdkVersion
+        targetSdkVersion Configs.targetSdkVersion
+        versionCode Configs.versionCode
+        versionName Configs.versionName
+        testInstrumentationRunner Configs.testInstrumentationRunner
+        flavorDimensions Configs.flavorDimension
+        vectorDrawables.useSupportLibrary = Configs.vectorDrawables
+        buildConfigField("String", "HOST", "\"https://api.themoviedb.org/3/\"")
+    }
+
+    dataBinding { enabled = true }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            res.srcDirs =
+                    ['src/main/res/layouts/activities',
+                     'src/main/res/layouts/fragments',
+                     'src/main/res/layouts/customs',
+                     'src/main/res/layouts/adapters',
+                     'src/main/res/layouts',
+                     'src/main/res']
+        }
+        main.java.srcDirs += 'src/main/kotlin'
+        main.java.srcDirs += [file("$buildDir/generated/source/kapt/main")]
+        test.java.srcDirs += 'src/test/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        languageVersion = "1.4"
+    }
+}
+
+dependencies {
+
+    //Support
+    implementation Dependencies.appcompat
+    implementation Dependencies.material
+    implementation Dependencies.kotlin
+    implementation Dependencies.androidxCore
+
+    // dagger
+    implementation Dependencies.dagger
+    implementation Dependencies.daggerAndroid
+    kapt Dependencies.daggerCompiler
+    kapt Dependencies.daggerProcessor
+
+    // ViewModel & LiveData
+    implementation Dependencies.lifecycleExtension
+    implementation Dependencies.lifecycleViewModel
+    kapt Dependencies.lifecycleCompiler
+
+    // Retrofit & Gson.
+    implementation Dependencies.retrofit
+    implementation Dependencies.retrofitGsonConverter
+    implementation Dependencies.retrofitRxJavaAdapter
+    implementation Dependencies.okhttp
+
+    // rxjava
+    implementation Dependencies.rxAndroid
+    implementation Dependencies.rxJava
+
+    //Tools
+    implementation Dependencies.glide
+    kapt Dependencies.glideCompiler
+    implementation Dependencies.baseQuickAdapter
+
+    //Testing
+    androidTestImplementation Dependencies.androidxTestRunner
+    androidTestImplementation Dependencies.espressoCore
+    testImplementation Dependencies.truthExt
+    testImplementation Dependencies.mockK
+    testImplementation Dependencies.coreTesting
+    testImplementation Dependencies.junit
+}

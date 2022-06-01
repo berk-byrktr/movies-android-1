@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewStatePage"
+            type="com.movies.android.ui.viewstates.ViewStatePage" />
+
+    </data>
+
+    <LinearLayout
+        style="@style/ViewMM"
+        android:orientation="vertical">
+
+        <FrameLayout
+            style="@style/ViewMW"
+            android:layout_height="@dimen/dim_toolbar"
+            android:background="@color/colorPrimary">
+
+            <com.movies.android.ui.customs.CustomImage
+                style="@style/ViewWW"
+                android:layout_height="@dimen/dim_toolbar_logo"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_logo" />
+
+        </FrameLayout>
+
+        <com.movies.android.ui.customs.CustomPage
+            android:id="@+id/cp"
+            style="@style/ViewMM"
+            error="@{viewStatePage.error}"
+            state="@{viewStatePage.getState()}"
+            android:background="@color/backgroundMain"
+            android:clickable="true"
+            android:focusable="true">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMoviesPopular"
+                style="@style/ViewMW"
+                android:clipToPadding="false"
+                android:paddingBottom="@dimen/pdd_48" />
+
+        </com.movies.android.ui.customs.CustomPage>
+
+    </LinearLayout>
+
+</layout>

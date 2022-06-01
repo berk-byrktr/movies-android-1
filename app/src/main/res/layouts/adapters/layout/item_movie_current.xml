@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="movie"
+            type="com.movies.android.ui.models.Movie" />
+
+    </data>
+
+    <com.movies.android.ui.customs.CustomImage
+        style="@style/ImageMedium"
+        imageUrl="@{movie.imageUrl}" />
+
+</layout>

@@ -1,0 +1,33 @@
+apply plugin: Plugins.gradleVersionPlugin
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+
+    }
+    dependencies {
+        classpath Classpaths.gradleClasspath
+        classpath Classpaths.kotlinGradleClasspath
+        classpath Classpaths.gradleVersionPlugin
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+task {
+    dependencyUpdates {
+        checkConstraints = true
+    }
+}

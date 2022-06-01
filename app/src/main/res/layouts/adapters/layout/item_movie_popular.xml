@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="movie"
+            type="com.movies.android.ui.models.Movie" />
+
+    </data>
+
+    <RelativeLayout
+        style="@style/ViewMW"
+        android:layout_marginBottom="@dimen/mrg_4"
+        android:background="@color/colorPrimary">
+
+        <com.movies.android.ui.customs.CustomImage
+            android:id="@+id/iv"
+            style="@style/ImageSmall"
+            imageUrl="@{movie.imageUrl}"
+            android:layout_marginStart="@dimen/mrg_24"
+            android:layout_marginTop="@dimen/mrg_8"
+            android:layout_marginBottom="@dimen/mrg_8"
+            app:withBorder="true" />
+
+        <LinearLayout
+            style="@style/ViewWW"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/mrg_8"
+            android:layout_toStartOf="@id/cr"
+            android:layout_toEndOf="@id/iv"
+            android:gravity="start"
+            android:orientation="vertical">
+
+            <com.movies.android.ui.customs.CustomText
+                style="@style/TextBoldMediumDefault"
+                android:maxLines="@integer/max_lines_1"
+                android:text="@{movie.title}" />
+
+            <com.movies.android.ui.customs.CustomText
+                style="@style/TextSmallDefault"
+                android:maxLines="@integer/max_lines_1"
+                android:text="@{movie.releaseDate}" />
+
+            <com.movies.android.ui.customs.CustomText
+                style="@style/TextSmallDefault"
+                android:maxLines="@integer/max_lines_1"
+                android:text="@{movie.duration}" />
+
+        </LinearLayout>
+
+        <com.movies.android.ui.customs.CustomRating
+            android:id="@+id/cr"
+            progress="@{movie.progress}"
+            progressColor="@{movie.progressColor}"
+            android:layout_width="@dimen/dim_rating_view"
+            android:layout_height="@dimen/dim_rating_view"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/mrg_24" />
+
+    </RelativeLayout>
+
+</layout>

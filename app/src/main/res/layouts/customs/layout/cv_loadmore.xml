@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ViewMW">
+
+    <FrameLayout
+        android:id="@+id/flLoading"
+        style="@style/ViewMM"
+        android:layout_height="@dimen/mrg_48"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <ProgressBar
+            android:id="@+id/loading_progress"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminateTint="@android:color/white" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/flError"
+        style="@style/ViewMM"
+        android:layout_height="@dimen/mrg_48"
+        android:layout_marginTop="@dimen/mrg_12"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <com.movies.android.ui.customs.CustomButton
+            android:id="@+id/btAction"
+            style="@style/ButtonActiveSmall"
+            android:layout_gravity="center"
+            android:gravity="center"
+            app:text="@string/bt_retry" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/flEnd"
+        style="@style/ViewMW"
+        android:layout_height="0dp"
+        android:visibility="gone" />
+
+</FrameLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Image">
+        <item name="android:scaleType">fitXY</item>
+    </style>
+
+    <style name="ImageSmall" parent="Image">
+        <item name="android:layout_width">47dp</item>
+        <item name="android:layout_height">71dp</item>
+    </style>
+
+    <style name="ImageMedium">
+        <item name="android:layout_width">106dp</item>
+        <item name="android:layout_height">160dp</item>
+    </style>
+
+    <style name="ImageLarge">
+        <item name="android:layout_width">135dp</item>
+        <item name="android:layout_height">201dp</item>
+    </style>
+
+</resources>
